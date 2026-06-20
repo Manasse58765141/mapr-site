@@ -4883,33 +4883,172 @@ section {
     color: var(--bleu-royal) !important;
 }
 
-/* ===== WIDGET GOOGLE TRANSLATE ===== */
+/* ========================================
+   WIDGET GOOGLE TRANSLATE — VERSION PRO
+   ======================================== */
+
 #google_translate_widget {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     z-index: 9998;
-    background: var(--blanc);
-    padding: 10px 15px;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--bleu-royal), var(--bleu-clair));
+    padding: 20px 25px 18px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(26, 58, 107, 0.4);
     display: none;
     border: 2px solid var(--or);
+    min-width: 280px;
+    max-width: 320px;
 }
 
 #google_translate_widget.visible {
     display: block;
-    animation: slideUpFade 0.4s ease;
+    animation: slideUpFade 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#google_translate_widget::before {
+    content: '🌍 Choose your language';
+    display: block;
+    color: var(--or);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    text-align: center;
 }
 
 @keyframes slideUpFade {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
+    from { 
+        transform: translateY(50px) scale(0.95); 
+        opacity: 0; 
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
+    to { 
+        transform: translateY(0) scale(1); 
+        opacity: 1; 
+    }
+}
+
+.google-translate-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: var(--or);
+    color: var(--bleu-royal);
+    border: 3px solid var(--blanc);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.google-translate-close:hover {
+    background: var(--or-clair);
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* ===== EMBELLIR LE SÉLECTEUR GOOGLE INTERNE ===== */
+
+#google_translate_element {
+    text-align: center;
+}
+
+/* Cacher les éléments inutiles de Google */
+.goog-te-banner-frame,
+.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+div#goog-gt- {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+.goog-te-gadget > span > a {
+    display: none !important;
+}
+
+/* Le SELECT principal */
+.goog-te-gadget .goog-te-combo {
+    background: var(--blanc) !important;
+    color: var(--bleu-royal) !important;
+    border: 2px solid var(--or) !important;
+    border-radius: 25px !important;
+    padding: 10px 35px 10px 18px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C9A84C'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important;
+    background-size: 18px !important;
+    width: 100% !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+    background-color: var(--or) !important;
+    color: var(--bleu-royal) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 168, 76, 0.4) !important;
+}
+
+.goog-te-gadget .goog-te-combo:focus {
+    outline: none !important;
+    border-color: var(--or-clair) !important;
+}
+
+/* Cacher la barre Google en haut */
+body {
+    top: 0 !important;
+    position: static !important;
+}
+
+body > .skiptranslate {
+    display: none !important;
+}
+
+/* Bandeau "Powered by Google" élégant */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* ===== INDICATEUR DE TRADUCTION EN COURS ===== */
+.goog-te-spinner-pos {
+    display: none !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+    #google_translate_widget {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
+        min-width: 0;
+        padding: 18px 22px 16px;
+    }
+    
+    .google-translate-close {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
     }
 }
 
@@ -4943,5 +5082,79 @@ section {
         bottom: 15px;
         right: 15px;
         padding: 8px 12px;
+    }
+}
+
+/* ========================================
+   BOUTON FLOTTANT LANGUES (toujours visible)
+   ======================================== */
+
+.lang-float-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--or), #d4b75a);
+    color: var(--bleu-royal);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.lang-float-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 40px rgba(201, 168, 76, 0.6);
+}
+
+.lang-float-btn::after {
+    content: 'Translate';
+    position: absolute;
+    right: 100%;
+    margin-right: 12px;
+    background: var(--bleu-royal);
+    color: var(--blanc);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: var(--transition);
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lang-float-btn:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Cacher le bouton si widget ouvert */
+#google_translate_widget.visible ~ .lang-float-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 500px) {
+    .lang-float-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .lang-float-btn::after {
+        display: none;
     }
 }
