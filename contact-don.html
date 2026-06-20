@@ -46,23 +46,25 @@
             <li><a href="piliers.html">Les 4 Piliers</a></li>
             <li><a href="volet-social.html">Volet Social</a></li>
             <li><a href="partenaires.html">Partenaires</a></li>
-            <!-- ===== SÉLECTEUR DE LANGUE ===== -->
+            <!-- ===== SÉLECTEUR DE LANGUE (version mobile-friendly) ===== -->
             <li class="lang-selector">
                 <button class="lang-btn" id="langBtn" aria-label="Changer de langue">
-                    <span class="lang-flag">🇫🇷</span>
-                    <span class="lang-text">FR</span>
+                    <span class="lang-flag lang-flag--fr">FR</span>
                     <span class="lang-arrow">▼</span>
                 </button>
                 <div class="lang-dropdown" id="langDropdown">
                     <a href="#" class="lang-option active">
-                        <span>🇫🇷</span> Français
+                        <span class="lang-flag lang-flag--fr">FR</span>
+                        <span>Français</span>
                     </a>
                     <a href="en/index.html" class="lang-option">
-                        <span>🇬🇧</span> English
+                        <span class="lang-flag lang-flag--en">EN</span>
+                        <span>English</span>
                     </a>
                     <div class="lang-separator"></div>
-                    <button class="lang-option lang-other" onclick="openGoogleTranslate()">
-                        <span>🌍</span> Other languages
+                    <button type="button" class="lang-option lang-other" onclick="openGoogleTranslate()">
+                        <span class="lang-flag lang-flag--world">🌍</span>
+                        <span>Other languages</span>
                     </button>
                 </div>
             </li>

@@ -4742,11 +4742,55 @@ section {
     border-color: var(--or);
 }
 
+/* ===== DRAPEAUX STYLISÉS (compatibles tous appareils) ===== */
 .lang-flag {
-    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 20px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     line-height: 1;
+    flex-shrink: 0;
 }
 
+/* Drapeau France : bleu-blanc-rouge */
+.lang-flag--fr {
+    background: linear-gradient(
+        to right,
+        #002395 0%,
+        #002395 33.33%,
+        #FFFFFF 33.33%,
+        #FFFFFF 66.66%,
+        #ED2939 66.66%,
+        #ED2939 100%
+    );
+    color: #002395;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+/* Drapeau UK : bleu avec croix */
+.lang-flag--en {
+    background: linear-gradient(45deg, #012169 25%, #FFFFFF 25%, #FFFFFF 75%, #012169 75%),
+                linear-gradient(135deg, #012169 25%, #FFFFFF 25%, #FFFFFF 75%, #012169 75%);
+    background-size: 100% 100%;
+    background-color: #012169;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Drapeau monde : emoji */
+.lang-flag--world {
+    background: linear-gradient(135deg, #2E7D32, #1A3A6B);
+    font-size: 1rem;
+    width: 28px;
+    height: 20px;
+}
 .lang-text {
     letter-spacing: 1px;
 }
