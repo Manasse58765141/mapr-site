@@ -2832,14 +2832,29 @@ section {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .partner-full-card {
+        grid-template-columns: 110px 1fr;
+    }
+    
+    .partner-full-card__logo {
+        font-size: 3rem;
+    }
+}
+
 @media (max-width: 900px) {
     .partner-full-card {
         grid-template-columns: 1fr;
     }
     
     .partner-full-card__logo {
-        padding: 30px;
-        font-size: 3rem;
+        padding: 35px 20px;
+        font-size: 3.5rem;
+        min-height: 140px;
+    }
+    
+    .partner-full-card__content {
+        padding: 25px 25px 30px;
     }
     
     .become-partner__card {
@@ -2854,6 +2869,26 @@ section {
     
     .become-partner__buttons {
         justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .partner-full-card__content {
+        padding: 20px 18px 25px;
+    }
+    
+    .partner-full-card__logo {
+        padding: 30px 20px;
+        font-size: 3rem;
+        min-height: 120px;
+    }
+    
+    .partner-full-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .partner-full-card__desc {
+        font-size: 0.9rem;
     }
 }
 
