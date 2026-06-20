@@ -1,6 +1,6 @@
 // ============================
 // DÉTECTION AUTOMATIQUE DE LANGUE
-// MAPR - Multilingual System
+// MAPR - Multilingual System v2.0
 // ============================
 
 (function() {
@@ -11,42 +11,79 @@
     const DEFAULT_LANGUAGE = 'fr';
     const STORAGE_KEY = 'mapr_user_language';
     
-    // === FONCTION PRINCIPALE ===
+    // === ÉTAPE 1 : INTERCEPTER LES CLICS DE LANGUE EN PREMIER ===
+    // (TRÈS IMPORTANT : doit s'exécuter AVANT la détection)
+    function setupManualLangChange() {
+        document.addEventListener('click', function(e) {
+            const langLink = e.target.closest('.lang-option');
+            if (!langLink) return;
+            
+            const href = langLink.getAttribute('href');
+            if (!href || href === '#') return;
+            
+            // Détecter si on va vers EN ou FR
+            const goingToEnglish = href.includes('/en/') || 
+                                   href.startsWith('en/') ||
+                                   href === '../en/index.html';
+            const userChoice = goingToEnglish ? 'en' : 'fr';
+            
+            // ⚡ SAUVEGARDER IMMÉDIATEMENT (avant que la page change)
+            try {
+                localStorage.setItem(STORAGE_KEY, userChoice);
+                console.log('💾 Choix utilisateur sauvegardé : ' + userChoice);
+            } catch(err) {
+                console.warn('⚠️ localStorage non disponible');
+            }
+        }, true); // ← true = capture phase (priorité)
+    }
+    
+    // === ÉTAPE 2 : DÉTECTION ET REDIRECTION ===
     function detectAndRedirect() {
         
-        // 1. Vérifier si l'utilisateur a déjà fait un choix
-        const savedLang = localStorage.getItem(STORAGE_KEY);
+        // 1. PRIORITÉ ABSOLUE : choix manuel sauvegardé
+        let savedLang = null;
+        try {
+            savedLang = localStorage.getItem(STORAGE_KEY);
+        } catch(err) {
+            console.warn('⚠️ localStorage non disponible');
+        }
+        
         if (savedLang) {
-            console.log('🌐 Langue sauvegardée : ' + savedLang);
-            redirectIfNeeded(savedLang);
+            console.log('🌐 Langue sauvegardée trouvée : ' + savedLang);
+            console.log('✋ Respect du choix utilisateur (pas de détection auto)');
+            // L'utilisateur a fait un choix → ON LE RESPECTE
+            // On vérifie juste qu'il est sur la bonne version
+            redirectIfNeeded(savedLang, false); // false = pas de sauvegarde
             return;
         }
         
-        // 2. Si aucun choix sauvegardé, détecter la langue du navigateur
+        // 2. Aucun choix sauvegardé → première visite
+        // → On détecte la langue du navigateur
         const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        console.log('🌐 Langue navigateur détectée : ' + browserLang);
+        console.log('🌐 Première visite. Langue navigateur : ' + browserLang);
         
-        // 3. Déterminer la langue à utiliser
         let detectedLang = DEFAULT_LANGUAGE;
         
         if (browserLang.startsWith('fr')) {
             detectedLang = 'fr';
         } else {
-            // Tout sauf le français → anglais (langue internationale)
             detectedLang = 'en';
         }
         
         console.log('🌐 Langue choisie automatiquement : ' + detectedLang);
         
-        // 4. Sauvegarder le choix
-        localStorage.setItem(STORAGE_KEY, detectedLang);
+        // 3. SAUVEGARDER cette détection (pour les visites futures)
+        try {
+            localStorage.setItem(STORAGE_KEY, detectedLang);
+            console.log('💾 Langue auto sauvegardée : ' + detectedLang);
+        } catch(err) {}
         
-        // 5. Rediriger si nécessaire
-        redirectIfNeeded(detectedLang);
+        // 4. Rediriger si nécessaire
+        redirectIfNeeded(detectedLang, true);
     }
     
     // === REDIRECTION INTELLIGENTE ===
-    function redirectIfNeeded(targetLang) {
+    function redirectIfNeeded(targetLang, isAutoDetection) {
         const currentPath = window.location.pathname;
         const isInEnglishFolder = currentPath.includes('/en/');
         
@@ -60,15 +97,23 @@
         
         // Si on veut EN et qu'on n'est PAS dans /en/ → rediriger vers EN
         if (targetLang === 'en' && !isInEnglishFolder) {
-            // Construire le chemin EN
             let newPath = currentPath;
             
             // Cas spécial : page d'accueil
             if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
                 newPath = '/en/index.html';
             } else {
-                // Pour les autres pages : ajouter /en/ au début
-                newPath = '/en' + currentPath;
+                // ⚠️ ATTENTION : on ne redirige PAS si la page EN n'existe pas
+                // Pour l'instant, seul en/index.html existe
+                // Donc on ne redirige automatiquement QUE pour la home
+                if (!isAutoDetection) {
+                    // Choix manuel : on essaye de rediriger
+                    newPath = '/en' + currentPath;
+                } else {
+                    // Détection auto : on ne redirige que pour la home
+                    console.log('ℹ️ Page EN non disponible pour : ' + currentPath);
+                    return;
+                }
             }
             
             console.log('🔄 Redirection vers EN : ' + newPath);
@@ -80,34 +125,18 @@
         console.log('✅ Vous êtes sur la bonne version : ' + targetLang);
     }
     
-    // === SAUVEGARDE QUAND L'UTILISATEUR CHANGE MANUELLEMENT ===
-    function setupManualLangChange() {
-        document.addEventListener('click', function(e) {
-            const langLink = e.target.closest('.lang-option');
-            if (!langLink) return;
-            
-            const href = langLink.getAttribute('href');
-            if (!href || href === '#') return;
-            
-            // Détecter si on va vers EN ou FR
-            const goingToEnglish = href.includes('/en/') || href.includes('en/');
-            const userChoice = goingToEnglish ? 'en' : 'fr';
-            
-            console.log('👆 Choix manuel utilisateur : ' + userChoice);
-            localStorage.setItem(STORAGE_KEY, userChoice);
-        });
-    }
-    
     // === LANCEMENT ===
-    // Au chargement de la page
+    
+    // ⚡ TRÈS IMPORTANT : on installe les clics EN PREMIER
+    // pour qu'ils interceptent même si la détection démarre
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            detectAndRedirect();
-            setupManualLangChange();
+            setupManualLangChange();  // 1er : intercepter les clics
+            detectAndRedirect();       // 2ème : détecter et rediriger
         });
     } else {
-        detectAndRedirect();
         setupManualLangChange();
+        detectAndRedirect();
     }
     
 })();
