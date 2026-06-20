@@ -64,6 +64,26 @@
             <li><a href="piliers.html">Les 4 Piliers</a></li>
             <li><a href="volet-social.html">Volet Social</a></li>
             <li><a href="partenaires.html">Partenaires</a></li>
+            <!-- ===== SÉLECTEUR DE LANGUE ===== -->
+            <li class="lang-selector">
+                <button class="lang-btn" id="langBtn" aria-label="Changer de langue">
+                    <span class="lang-flag">🇫🇷</span>
+                    <span class="lang-text">FR</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="#" class="lang-option active">
+                        <span>🇫🇷</span> Français
+                    </a>
+                    <a href="en/index.html" class="lang-option">
+                        <span>🇬🇧</span> English
+                    </a>
+                    <div class="lang-separator"></div>
+                    <button class="lang-option lang-other" onclick="openGoogleTranslate()">
+                        <span>🌍</span> Other languages
+                    </button>
+                </div>
+            </li>
             <li><a href="contact-don.html" class="nav__cta">Faire un don</a></li>
         </ul>
         <button class="nav__toggle" id="navToggle" aria-label="Menu">
