@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apostolic Mission of the Restored Word (MAPR) - A Christian organization and NGO in Benin. Restoring the Word, Transforming Lives across all 12 departments.">
+    <title>MAPR - Apostolic Mission of the Restored Word</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A3A6B' rx='15'/%3E%3Ctext x='50' y='72' font-family='Playfair Display, serif' font-size='65' font-weight='900' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+    
+    <!-- SEO -->
+    <meta name="keywords" content="MAPR, Apostolic Mission, Restored Word, Benin evangelism, Christian NGO Africa, orphanage Benin, social action, Prophet Yessoufou">
+    <meta name="author" content="Mission Apostolique de la Parole Restaurée">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MAPR - Apostolic Mission of the Restored Word">
+    <meta property="og:description" content="A Christian organization and NGO in Benin. Restoring the Word, Transforming Lives across all 12 departments.">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Hreflang for SEO -->
+    <link rel="alternate" hreflang="fr" href="https://mapr-site.vercel.app/index.html">
+    <link rel="alternate" hreflang="en" href="https://mapr-site.vercel.app/en/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://mapr-site.vercel.app/index.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="logo-sigle">MAPR</span>
+                <span class="logo-tagline">Apostolic Mission</span>
+            </a>
+            <ul class="nav__menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#pillars">Our 4 Pillars</a></li>
+                <li><a href="#social">Social Program</a></li>
+                <li><a href="#partners">Partners</a></li>
+                
+                <!-- ===== LANGUAGE SELECTOR ===== -->
+                <li class="lang-selector">
+                    <button class="lang-btn" id="langBtn" aria-label="Change language">
+                        <span class="lang-flag lang-flag--en">EN</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="../index.html" class="lang-option">
+                            <span class="lang-flag lang-flag--fr">FR</span>
+                            <span>Français</span>
+                        </a>
+                        <a href="#" class="lang-option active">
+                            <span class="lang-flag lang-flag--en">EN</span>
+                            <span>English</span>
+                        </a>
+                        <div class="lang-separator"></div>
+                        <button type="button" class="lang-option lang-other" onclick="openGoogleTranslate()">
+                            <span class="lang-flag lang-flag--world">🌍</span>
+                            <span>Other languages</span>
+                        </button>
+                    </div>
+                </li>
+                
+                <li><a href="#contact" class="nav__cta">Donate</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ===== SECTION 1 : HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero__overlay"></div>
+        <div class="container hero__content">
+            <p class="hero__suptitle">Apostolic Mission of the Restored Word</p>
+            <h1 class="hero__title">Restoring the Word.<br><span>Transforming Lives.</span></h1>
+            <p class="hero__subtitle">
+                A Christian and social organization working for the unity of the body of Christ 
+                and the salvation of souls across all 12 departments of Benin.
+            </p>
+            <div class="hero__buttons">
+                <a href="#about" class="btn btn--primary">🤝 Discover our mission</a>
+                <a href="#contact" class="btn btn--secondary">❤️ Donate now</a>
+            </div>
+        </div>
+        <div class="hero__scroll">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 : OUR FOUNDATION ===== -->
+    <section class="fondement" id="about">
+        <div class="container fondement__grid">
+            <div class="fondement__image">
+                <img src="../images/papa-1.jpg" alt="Prophet Ganiou Luc Yessoufou - MAPR Founder" onerror="this.parentElement.classList.add('no-image')">
+                <div class="image-placeholder">
+                    <span>📸</span>
+                    <p>Prophet Ganiou Luc Yessoufou</p>
+                </div>
+            </div>
+            <div class="fondement__text">
+                <p class="section__suptitle">Our Foundation</p>
+                <blockquote class="verse">
+                    "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
+                    <cite>— Matthew 28:19</cite>
+                </blockquote>
+                <p>
+                    Born in <strong>Bonou (Ouémé)</strong>, MAPR is not just a local church, 
+                    but a vast network for <strong>church planting</strong> and <strong>humanitarian assistance</strong>. 
+                    Under the vision of <strong>Prophet Ganiou Luc Yessoufou</strong>, we identify unreached areas, 
+                    prepare the harvest, plant churches, and provide concrete support to forgotten communities.
+                </p>
+                <div class="badge-officiel">
+                    📜 <span>Officially recognized organization by the Government of Benin<br>
+                    <small>DAIC Reference: PS01509-260428-gMOqvb</small></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 : IMPACT IN NUMBERS ===== -->
+    <section class="impact">
+        <div class="container">
+            <div class="impact__grid">
+                <div class="impact__card">
+                    <span class="impact__number" data-target="312">0</span>
+                    <p class="impact__label">Prayer Workers<br><small>24/7 chain</small></p>
+                </div>
+                <div class="impact__card">
+                    <span class="impact__number" data-target="12">0</span>
+                    <p class="impact__label">Departments<br><small>covered</small></p>
+                </div>
+                <div class="impact__card">
+                    <span class="impact__number" data-target="77">0</span>
+                    <p class="impact__label">Communities<br><small>targeted</small></p>
+                </div>
+                <div class="impact__card">
+                    <span class="impact__number">1</span>
+                    <p class="impact__label">Common Vision<br><small>Christ</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 4 : THE 4 PILLARS ===== -->
+    <section class="piliers" id="pillars">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__suptitle">Our Organization</p>
+                <h2 class="section__title">The 4 Pillars of the Mission</h2>
+                <p class="section__intro">
+                    A unique system called <strong>WSFS</strong> (Workers, Solidarity, Forgotten, Sentinels), 
+                    based on four complementary groups working together to fulfill Christ's Great Commission.
+                </p>
+            </div>
+            <div class="piliers__grid">
+                <article class="pilier-card pilier-card--green">
+                    <div class="pilier-card__icon">🌾</div>
+                    <h3>The Workers</h3>
+                    <p class="pilier-card__subtitle">Harvest & Intercession</p>
+                    <p>156 couples praying day and night across the country to identify areas where the Gospel has not yet been preached.</p>
+                </article>
+                <article class="pilier-card pilier-card--gold">
+                    <div class="pilier-card__icon">🤝</div>
+                    <h3>Solidarity</h3>
+                    <p class="pilier-card__subtitle">Mutual Aid & Entrepreneurship</p>
+                    <p>An entrepreneurship and contribution model to fund the mission and lift Christian families out of poverty.</p>
+                </article>
+                <article class="pilier-card pilier-card--blue">
+                    <div class="pilier-card__icon">💙</div>
+                    <h3>The Forgotten</h3>
+                    <p class="pilier-card__subtitle">Social Action & Salvation</p>
+                    <p>Field teams that evangelize and respond to social emergencies: orphans, the destitute, abandoned families.</p>
+                </article>
+                <article class="pilier-card pilier-card--white">
+                    <div class="pilier-card__icon">🛡️</div>
+                    <h3>The Sentinels</h3>
+                    <p class="pilier-card__subtitle">Support & Partnership</p>
+                    <p>Our donors and international partners who make this miracle possible, supported spiritually in return.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 5 : SOCIAL PROGRAM ===== -->
+    <section class="social" id="social">
+        <div class="container social__grid">
+            <div class="social__text">
+                <p class="section__suptitle">Social Program</p>
+                <h2 class="section__title">The Gospel is not just words,<br>it is also action.</h2>
+                <p>
+                    Led by professionals with over <strong>30 years of experience</strong> 
+                    in healthcare, social work and child protection, our humanitarian program 
+                    tackles poverty head-on.
+                </p>
+                <ul class="social__list">
+                    <li>🏠 Building orphanages</li>
+                    <li>👶 Assistance to children in need</li>
+                    <li>🏥 Creating community health centers</li>
+                    <li>💪 Support for abandoned women</li>
+                </ul>
+                <a href="#contact" class="btn btn--primary">🏥 Learn more</a>
+            </div>
+            <div class="social__image">
+                <img src="../images/maman-soeur.jpg" alt="Catherine KOUAGOU - Social Program Director" onerror="this.parentElement.classList.add('no-image')">
+                <div class="image-placeholder">
+                    <span>📸</span>
+                    <p>Catherine KOUAGOU<br>Social Program Director</p>
+                </div>
+                <div class="social__image-caption">
+                    <strong>Catherine KOUAGOU YESSOUFOU</strong>
+                    <span>Socio-Anthropologist · Social Work Technician</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6 : PARTNERS ===== -->
+    <section class="partenaires" id="partners">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__suptitle">Our Network</p>
+                <h2 class="section__title">They trust us</h2>
+            </div>
+            <div class="partenaires__grid">
+                <div class="partenaire-card">
+                    <div class="partenaire-logo">🌍</div>
+                    <h4>GloBeServe</h4>
+                    <p>Training & Disciple Making</p>
+                </div>
+                <div class="partenaire-card">
+                    <div class="partenaire-logo">🕊️</div>
+                    <h4>Oasis Ministries World</h4>
+                    <p>International Evangelism</p>
+                </div>
+                <div class="partenaire-card">
+                    <div class="partenaire-logo">🌐</div>
+                    <h4>WHOP Benin Globe</h4>
+                    <p>Local Partnership</p>
+                </div>
+                <div class="partenaire-card">
+                    <div class="partenaire-logo">💼</div>
+                    <h4>Global Business Round Table</h4>
+                    <p>Economic Support</p>
+                </div>
+                <div class="partenaire-card">
+                    <div class="partenaire-logo">⛪</div>
+                    <h4>BCU</h4>
+                    <p>Church Network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 7 : CALL TO ACTION ===== -->
+    <section class="cta" id="contact">
+        <div class="container cta__content">
+            <h2>The harvest is plentiful,<br>but the workers are few.</h2>
+            <p>
+                Whether you are a church leader wanting to join the network, 
+                or a donor wanting to impact lives in Benin, 
+                <strong>your place is here.</strong>
+            </p>
+            <div class="cta__buttons">
+                <a href="https://wa.me/22997395719" target="_blank" class="btn btn--primary">📞 Contact us (WhatsApp)</a>
+                <a href="#footer" class="btn btn--secondary">💳 Support the mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="container footer__grid">
+            <div class="footer__col">
+                <h3 class="footer__logo">MAPR</h3>
+                <p>Apostolic Mission of the Restored Word</p>
+                <p class="footer__verse">"Restoring the Word.<br>Transforming Lives."</p>
+            </div>
+            <div class="footer__col">
+                <h4>📍 National Headquarters</h4>
+                <p>Bonou, Ouémé Department<br>Damè Wogon District<br>Benin Republic</p>
+            </div>
+            <div class="footer__col">
+                <h4>📞 Contacts</h4>
+                <p>
+                    <a href="https://wa.me/22997395719">+229 97 39 57 19</a><br>
+                    <a href="https://wa.me/22997118053">+229 97 11 80 53</a><br>
+                    <a href="mailto:association.mapr@gmail.com">association.mapr@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer__col footer__col--transparence">
+                <h4>💰 Banking Transparency</h4>
+                <p>
+                    <strong>Bank of Africa (BOA) Benin</strong><br>
+                    <span class="iban">IBAN: BJ 061 00 657 150 001 51</span>
+                </p>
+                <p class="legalite">
+                    📜 Registered at DAIC<br>
+                    <small>Ministry of Interior — Ref: PS01509-260428</small>
+                </p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2024 Apostolic Mission of the Restored Word. All rights reserved.</p>
+                <p class="footer__credits">Website made with ❤️ for the glory of God</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton flottant traduction -->
+    <button class="lang-float-btn" onclick="openGoogleTranslate()" aria-label="Translate website" title="Translate to another language">
+        🌍
+    </button>
+
+    <!-- Détection automatique de langue -->
+    <script src="../detect-language.js"></script>
+    <!-- Script principal -->
+    <script src="../script.js"></script>
+</body>
+</html>
