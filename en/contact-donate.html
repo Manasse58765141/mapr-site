@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support MAPR: make a donation, become a partner, or contact us. Multiple options available: bank transfer, WhatsApp, email.">
+    <title>Contact & Donate | MAPR - Apostolic Mission of the Restored Word</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A3A6B' rx='15'/%3E%3Ctext x='50' y='72' font-family='Playfair Display, serif' font-size='65' font-weight='900' fill='%23C9A84C' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+    
+    <!-- SEO -->
+    <meta name="keywords" content="donate MAPR, support Benin mission, Christian donation Africa, IBAN MAPR, partnership Benin NGO">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact & Donate | MAPR">
+    <meta property="og:description" content="Support our mission in Benin. Multiple ways to donate and partner with us.">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="fr" href="https://mapr-site.vercel.app/contact-don.html">
+    <link rel="alternate" hreflang="en" href="https://mapr-site.vercel.app/en/contact-donate.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="logo-sigle">MAPR</span>
+                <span class="logo-tagline">Apostolic Mission</span>
+            </a>
+            <ul class="nav__menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#pillars">Our 4 Pillars</a></li>
+                <li><a href="index.html#social">Social Program</a></li>
+                <li><a href="index.html#partners">Partners</a></li>
+                
+                <li class="lang-selector">
+                    <button class="lang-btn" id="langBtn" aria-label="Change language">
+                        <span class="lang-flag lang-flag--en">EN</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="../contact-don.html" class="lang-option">
+                            <span class="lang-flag lang-flag--fr">FR</span>
+                            <span>Français</span>
+                        </a>
+                        <a href="#" class="lang-option active">
+                            <span class="lang-flag lang-flag--en">EN</span>
+                            <span>English</span>
+                        </a>
+                        <div class="lang-separator"></div>
+                        <button type="button" class="lang-option lang-other" onclick="openGoogleTranslate()">
+                            <span class="lang-flag lang-flag--world">🌍</span>
+                            <span>Other languages</span>
+                        </button>
+                    </div>
+                </li>
+                
+                <li><a href="contact-donate.html" class="nav__cta active">Donate</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero page-hero--don">
+        <div class="page-hero__overlay"></div>
+        <div class="container page-hero__content">
+            <p class="page-hero__suptitle">Supporting the Mission</p>
+            <h1 class="page-hero__title">Contact & Donate</h1>
+            <p class="page-hero__subtitle">
+                Every gesture matters. Whether it's a donation, a partnership, or a simple prayer, 
+                <strong>you are part of the mission.</strong>
+            </p>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span class="current">Contact & Donate</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ===== WHY DONATE ===== -->
+    <section class="why-give">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__suptitle">Your Impact</p>
+                <h2 class="section__title">Why your donation changes everything</h2>
+                <p class="section__intro">
+                    Every CFA franc, every euro, every dollar invested in MAPR 
+                    becomes concrete action in the field.
+                </p>
+            </div>
+
+            <div class="impact-examples">
+                <div class="impact-example">
+                    <span class="impact-amount">$10 USD</span>
+                    <p>= Feed an orphan child for <strong>1 week</strong></p>
+                </div>
+                <div class="impact-example">
+                    <span class="impact-amount">$50 USD</span>
+                    <p>= Support a needy family for <strong>1 month</strong></p>
+                </div>
+                <div class="impact-example">
+                    <span class="impact-amount">$200 USD</span>
+                    <p>= Fund an evangelism mission in <strong>one community</strong></p>
+                </div>
+                <div class="impact-example">
+                    <span class="impact-amount">$1000 USD</span>
+                    <p>= Launch an empowerment project for <strong>10 women</strong></p>
+                </div>
+            </div>
+            <p class="impact-note">
+                💡 <em>These estimates are indicative. Every donation, regardless of size, 
+                is used with transparency and wisdom.</em>
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== DONATION METHODS ===== -->
+    <section class="donation-methods">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__suptitle">How to Donate</p>
+                <h2 class="section__title">3 Ways to Support Us</h2>
+                <p class="section__intro">
+                    Choose the method that suits you best. 
+                    All are secure and trackable.
+                </p>
+            </div>
+
+            <div class="methods-grid">
+                <!-- Method 1: Bank Transfer -->
+                <article class="method-card method-card--primary">
+                    <div class="method-card__badge">Recommended</div>
+                    <div class="method-card__icon">🏦</div>
+                    <h3>Bank Transfer</h3>
+                    <p class="method-card__desc">
+                        The most direct and secure method. 
+                        Ideal for recurring or large donations.
+                    </p>
+                    
+                    <div class="bank-details">
+                        <div class="bank-detail">
+                            <span class="bank-label">Bank</span>
+                            <span class="bank-value">Bank of Africa (BOA) Benin</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="bank-label">Account Holder</span>
+                            <span class="bank-value">Mission Apostolique de la Parole Restaurée</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="bank-label">IBAN</span>
+                            <span class="bank-value bank-value--iban">BJ 061 00 657 150 001 51</span>
+                        </div>
+                        <div class="bank-detail">
+                            <span class="bank-label">SWIFT Code</span>
+                            <span class="bank-value">AFRIBJBJ</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn--primary btn--copy" onclick="copyIban()">
+                        📋 Copy IBAN
+                    </button>
+                </article>
+
+                <!-- Method 2: Mobile Money -->
+                <article class="method-card">
+                    <div class="method-card__icon">📱</div>
+                    <h3>Mobile Money</h3>
+                    <p class="method-card__desc">
+                        For quick donations from Benin or West Africa. 
+                        Available 24/7.
+                    </p>
+                    
+                    <div class="mobile-money-options">
+                        <div class="mm-option">
+                            <span class="mm-name">📞 MTN Mobile Money</span>
+                            <span class="mm-number">+229 97 39 57 19</span>
+                        </div>
+                        <div class="mm-option">
+                            <span class="mm-name">📞 Moov Money</span>
+                            <span class="mm-number">+229 97 11 80 53</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/22997395719?text=Hello,%20I%20would%20like%20to%20donate%20via%20Mobile%20Money" target="_blank" rel="noopener" class="btn btn--primary">
+                        💬 Confirm via WhatsApp
+                    </a>
+                </article>
+
+                <!-- Method 3: Direct Contact -->
+                <article class="method-card">
+                    <div class="method-card__icon">🤝</div>
+                    <h3>In-Kind Gift or Partnership</h3>
+                    <p class="method-card__desc">
+                        Clothing, books, school or medical supplies? 
+                        Institutional partnership? Contact us directly.
+                    </p>
+                    
+                    <div class="contact-options">
+                        <a href="mailto:association.mapr@gmail.com" class="contact-option">
+                            <span>📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <span>association.mapr@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/22997395719" target="_blank" rel="noopener" class="contact-option">
+                            <span>💬</span>
+                            <div>
+                                <strong>WhatsApp Direct</strong>
+                                <span>+229 97 39 57 19</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <a href="https://wa.me/22997395719?text=Hello,%20I%20would%20like%20to%20become%20a%20MAPR%20partner" target="_blank" rel="noopener" class="btn btn--primary">
+                        🤝 Become a Partner
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-grid">
+                <div class="contact-form__info">
+                    <p class="section__suptitle">Get in Touch</p>
+                    <h2 class="section__title">A question? A project?<br>Let's talk.</h2>
+                    <p>
+                        Our team is available to answer all your questions, 
+                        whether you are a potential donor, a partner, 
+                        or simply curious about our mission.
+                    </p>
+                    
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-info__icon">📍</div>
+                            <div>
+                                <h4>National Headquarters</h4>
+                                <p>Bonou, Ouémé Department<br>
+                                Damè Wogon District<br>
+                                Republic of Benin</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info__icon">📞</div>
+                            <div>
+                                <h4>Phone & WhatsApp</h4>
+                                <p>
+                                    <a href="https://wa.me/22997395719">+229 97 39 57 19</a><br>
+                                    <a href="https://wa.me/22997118053">+229 97 11 80 53</a><br>
+                                    <a href="https://wa.me/22961323663">+229 61 32 36 63</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info__icon">📧</div>
+                            <div>
+                                <h4>Official Email</h4>
+                                <p><a href="mailto:association.mapr@gmail.com">association.mapr@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info__icon">⏰</div>
+                            <div>
+                                <h4>Availability</h4>
+                                <p>Monday - Saturday: 8 AM - 6 PM (GMT+1)<br>
+                                <small>Prayer chain 24/7</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form__form">
+                    <h3>Send us a message</h3>
+                    <form action="https://formsubmit.co/association.mapr@gmail.com" method="POST" class="form">
+                        <input type="hidden" name="_next" value="https://mapr-site.vercel.app/en/contact-donate.html?sent=true">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New message from MAPR website (EN)">
+                        
+                        <div class="form-group">
+                            <label for="nom">Your name *</label>
+                            <input type="text" id="nom" name="Name" required placeholder="Ex: John Smith">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your email *</label>
+                            <input type="email" id="email" name="Email" required placeholder="example@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telephone">Phone (optional)</label>
+                            <input type="tel" id="telephone" name="Phone" placeholder="+1 ...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sujet">Subject *</label>
+                            <select id="sujet" name="Subject" required>
+                                <option value="">-- Choose --</option>
+                                <option value="Donation">Make a donation</option>
+                                <option value="Partnership">Become a partner</option>
+                                <option value="Join">Join the mission</option>
+                                <option value="Information">Request information</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your message *</label>
+                            <textarea id="message" name="Message" rows="5" required placeholder="Write your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full">
+                            ✉️ Send message
+                        </button>
+                        
+                        <p class="form-note">
+                            🔒 Your information is protected and will never be shared.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRANSPARENCY ===== -->
+    <section class="transparency-section">
+        <div class="container">
+            <div class="transparency-card">
+                <div class="transparency-card__icon">🛡️</div>
+                <div class="transparency-card__content">
+                    <h2>Our commitment to transparency</h2>
+                    <p>
+                        MAPR is an <strong>officially recognized organization by the Government of Benin</strong> 
+                        (DAIC Reference: <code>PS01509-260428-gMOqvb</code>). 
+                        Every donation is tracked, accounted for, and used in accordance with our mission.
+                    </p>
+                    <p>
+                        We will soon publish our <strong>annual financial reports</strong> 
+                        to ensure total transparency to our donors and partners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__col">
+                <h3 class="footer__logo">MAPR</h3>
+                <p>Apostolic Mission of the Restored Word</p>
+                <p class="footer__verse">"Restoring the Word.<br>Transforming Lives."</p>
+            </div>
+            <div class="footer__col">
+                <h4>📍 National Headquarters</h4>
+                <p>Bonou, Ouémé Department<br>Damè Wogon District<br>Benin Republic</p>
+            </div>
+            <div class="footer__col">
+                <h4>📞 Contacts</h4>
+                <p>
+                    <a href="https://wa.me/22997395719">+229 97 39 57 19</a><br>
+                    <a href="https://wa.me/22997118053">+229 97 11 80 53</a><br>
+                    <a href="mailto:association.mapr@gmail.com">association.mapr@gmail.com</a>
+                </p>
+            </div>
+            <div class="footer__col footer__col--transparence">
+                <h4>💰 Banking Transparency</h4>
+                <p>
+                    <strong>Bank of Africa (BOA) Benin</strong><br>
+                    <span class="iban">IBAN: BJ 061 00 657 150 001 51</span>
+                </p>
+                <p class="legalite">
+                    📜 Registered at DAIC<br>
+                    <small>Ministry of Interior — Ref: PS01509-260428</small>
+                </p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© 2024 Apostolic Mission of the Restored Word. All rights reserved.</p>
+                <p class="footer__credits">Website made with ❤️ for the glory of God</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating translation button -->
+    <button class="lang-float-btn" onclick="openGoogleTranslate()" aria-label="Translate website" title="Translate to another language">
+        🌍
+    </button>
+
+    <script src="../detect-language.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // ===== COPY IBAN FUNCTION =====
+        function copyIban() {
+            const iban = "BJ 061 00 657 150 001 51";
+            navigator.clipboard.writeText(iban).then(() => {
+                const btn = document.querySelector('.btn--copy');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ IBAN copied!';
+                btn.style.background = 'var(--vert)';
+                btn.style.color = 'white';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 2000);
+            });
+        }
+        
+        // ===== CONFIRMATION MESSAGE AFTER SEND =====
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('sent') === 'true') {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = '✅ Your message has been sent! We will reply quickly.';
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 5000);
+        }
+    </script>
+</body>
+</html>
